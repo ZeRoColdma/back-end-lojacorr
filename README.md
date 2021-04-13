@@ -11,37 +11,23 @@
 - Utilizar o comando: "adonis migration:run" para criar a base as tabelas e os campos necessarios.
 - Utilizar o comando: "adonis serve --dev" para iniciar serviço
 
-
 ## Rotas para acesso de endpoints
 
-- Rotas com o Middleware só sao acessiveis utilizando o Token JWT
+- Rotas com o Middleware só sao acessiveis utilizando o Token
 
-┌────────────┬───────────┬─────────────────────────┬────────────┬────────────────┬────────┐
-│ Route      │ Verb(s)   │ Handler                 │ Middleware │ Name           │ Domain │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /          │ HEAD,GET  │ Closure                 │            │ /              │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /users     │ HEAD,GET  │ UserController.index    │            │ /users.index   │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /users     │ POST      │ UserController.store    │            │ /users.store   │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /users/:id │ HEAD,GET  │ UserController.show     │            │ /users.show    │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /users/:id │ PUT,PATCH │ UserController.update   │            │ /users.update  │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /users/:id │ DELETE    │ UserController.destroy  │            │ /users.destroy │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /session   │ HEAD,GET  │ SessionController.index │            │ /session       │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /session   │ POST      │ SessionController.store │            │ /session       │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /cep       │ HEAD,GET  │ CepController.index     │ auth       │ /cep.index     │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /cep       │ POST      │ CepController.store     │ auth       │ /cep.store     │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /cep/:id   │ HEAD,GET  │ CepController.show      │ auth       │ /cep.show      │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /cep/:id   │ PUT,PATCH │ CepController.update    │ auth       │ /cep.update    │        │
-├────────────┼───────────┼─────────────────────────┼────────────┼────────────────┼────────┤
-│ /cep/:id   │ DELETE    │ CepController.destroy   │ auth       │ /cep.destroy   │        │
-└────────────┴───────────┴─────────────────────────┴────────────┴────────────────┴────────┘
+/ **Rota de controle**
+
+/users HEAD,GET UserController.index  
+/users POST UserController.store  
+/users/:id HEAD,GET UserController.show  
+/users/:id PUT,PATCH UserController.update  
+/users/:id DELETE UserController.destroy  
+
+/session HEAD,GET SessionController.index  
+/session POST SessionController.store  
+
+/cep HEAD,GET CepController.index       **auth**  
+/cep POST CepController.store           **auth**  
+/cep/:id HEAD,GET CepController.show    **auth**  
+/cep/:id PUT,PATCH CepController.update **auth**  
+/cep/:id DELETE CepController.destroy   **auth**
