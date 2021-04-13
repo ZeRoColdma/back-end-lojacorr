@@ -1,28 +1,10 @@
-# Adonis API application
+# Setup
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+- Ter o docker Instalado na maquina
+- Usar o comando: docker run --name database -e POSTGRES_PASSWORD=docker -d postgres
+- Para criar o container
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+- Se for preciso, alterar o DB_HOST dentro do aquivo .env para apontar ao banco de dados correto. Caso precise localizar o IP do container utilizar o comando: docker inspect "HASH do Container"
 
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick --api-only
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+- Utilizar o comando: "adonis migration:run" para criar a base as tabelas e os campos necessarios.
+- Utilizar o comando: "adonis serve --dev" para iniciar serviço
