@@ -13,7 +13,7 @@
 
 ## Rotas para acesso de endpoints
 
-- Rotas com o Middleware só sao acessiveis utilizando o Token
+- Rotas com o Middleware **auth** só serão acessiveis utilizando o Token
 
 / **Rota de controle**
 
@@ -21,13 +21,13 @@
 /users POST UserController.store  
 /users/:id HEAD,GET UserController.show  
 /users/:id PUT,PATCH UserController.update  
-/users/:id DELETE UserController.destroy  
+/users/:id DELETE UserController.destroy
 
 /session HEAD,GET SessionController.index  
-/session POST SessionController.store  
+/session POST SessionController.store
 
-/cep HEAD,GET CepController.index       **auth**  
-/cep POST CepController.store           **auth**  
-/cep/:id HEAD,GET CepController.show    **auth**  
+/cep HEAD,GET CepController.index **auth**  
+/cep POST CepController.store **auth**  
+/cep/:id HEAD,GET CepController.show **auth**  
 /cep/:id PUT,PATCH CepController.update **auth**  
-/cep/:id DELETE CepController.destroy   **auth**
+/cep/:id DELETE CepController.destroy **auth**
