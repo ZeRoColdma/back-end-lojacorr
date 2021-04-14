@@ -5,9 +5,9 @@ const axios = use("axios");
 
 class CepController {
   async index({ auth }) {
-    const ceps = await Cep.query().with("user").fetch();
     const userId = auth.user.id;
 
+    const ceps = await Cep.query().where("user_id", userId).fetch();
     return { ceps, userId };
   }
 

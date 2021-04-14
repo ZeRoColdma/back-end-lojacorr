@@ -27,7 +27,7 @@ class UserController {
 
   async update({ params, request }) {
     const user = await User.findOrFail(params.id);
-    const data = request.all();
+    const data = request.only(["username", "email", "password"]);
     user.merge(data);
     await user.save();
     return user;
